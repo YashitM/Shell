@@ -74,7 +74,7 @@ int	main() {
 			else if (strstr(first, "cat")){
 				pid = fork();
 				if(pid == 0) {
-					char *argv[] = {"./cat", (char *) elements};
+					char *argv[] = {"./binaries/cat", (char *) elements};
 					if(execvp(argv[0],argv)<0) {
 						printf("\033[0;33m");
 						printf("Command Can't Be Executed\n");
@@ -91,7 +91,7 @@ int	main() {
 				pid = fork();
 				if (pid == 0)
 				{
-					char *argv[] = {"./echo", (char *)elements};
+					char *argv[] = {"./binaries/echo", (char *)elements};
 					if (execvp(argv[0], argv) < 0)
 					{
 						printf("\033[0;33m");
@@ -109,7 +109,7 @@ int	main() {
 				pid = fork();
 				if (pid == 0)
 				{
-					char *argv[] = {"./date", (char *)elements};
+					char *argv[] = {"./binaries/date", (char *)elements};
 					if (execvp(argv[0], argv) < 0)
 					{
 						printf("\033[0;33m");
@@ -127,7 +127,7 @@ int	main() {
 				pid = fork();
 				if (pid == 0)
 				{
-					char *argv[] = {"./rm", (char *)elements};
+					char *argv[] = {"./binaries/rm", (char *)elements};
 					if (execvp(argv[0], argv) < 0)
 					{
 						printf("\033[0;33m");
@@ -145,7 +145,7 @@ int	main() {
 				pid = fork();
 				if (pid == 0)
 				{
-					char *argv[] = {"./mkdir", (char *)elements};
+					char *argv[] = {"./binaries/mkdir", (char *)elements};
 					if (execvp(argv[0], argv) < 0)
 					{
 						printf("\033[0;33m");

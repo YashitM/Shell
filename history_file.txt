@@ -17,3 +17,9 @@ echo -n lol
 echo -n lolo how aere you
 echo -n , how are you
 echo -e how are you
+ls
+cll.c
+cat shell.c
+cat shell.c cat.c
+clear
+echo "Hello"
