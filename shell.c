@@ -5,8 +5,6 @@
 #include <sys/wait.h>
 #include <fcntl.h>
 
-// Internal External Command separation
-
 int checkExists(char **argv, int argc)
 {
 	for (int i = 0; i < argc; i++)
