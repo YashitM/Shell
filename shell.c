@@ -31,7 +31,7 @@ int	main() {
 		fgets(input_string,100,stdin);
 		FILE *file;
 		file = fopen("history_file.txt", "a");
-		fprintf(file, input_string);
+		fprintf(file, "%s" ,input_string);
 		fclose(file);
 		if(input_string[0]!='\n') {
 			input_string[strcspn(input_string,"\r\n")]=0;
@@ -74,7 +74,7 @@ int	main() {
 			else if (strstr(first, "cat")){
 				pid = fork();
 				if(pid == 0) {
-					char *argv[] = {"./cat", elements};
+					char *argv[] = {"./cat", (char *) elements};
 					if(execvp(argv[0],argv)<0) {
 						printf("\033[0;33m");
 						printf("Command Can't Be Executed\n");
@@ -86,11 +86,31 @@ int	main() {
 					wait(NULL);
 				}
 			}
+			else if (strstr(first, "echo"))
+			{
+				printf("ECHOING!");
+				pid = fork();
+				if (pid == 0)
+				{
+					char *argv[] = {"./echo", (char *)elements};
+					if (execvp(argv[0], argv) < 0)
+					{
+						printf("\033[0;33m");
+						printf("Command Can't Be Executed\n");
+						printf("\033[0m");
+						exit(1);
+					}
+				}
+				else
+				{
+					wait(NULL);
+				}
+			}
 			else if (strstr(first,"date")) {
 				pid = fork();
 				if (pid == 0)
 				{
-					char *argv[] = {"./date", elements};
+					char *argv[] = {"./date", (char *)elements};
 					if (execvp(argv[0], argv) < 0)
 					{
 						printf("\033[0;33m");
@@ -108,7 +128,7 @@ int	main() {
 				pid = fork();
 				if (pid == 0)
 				{
-					char *argv[] = {"./rm", elements};
+					char *argv[] = {"./rm", (char *)elements};
 					if (execvp(argv[0], argv) < 0)
 					{
 						printf("\033[0;33m");
@@ -126,7 +146,7 @@ int	main() {
 				pid = fork();
 				if (pid == 0)
 				{
-					char *argv[] = {"./mkdir", elements};
+					char *argv[] = {"./mkdir", (char *)elements};
 					if (execvp(argv[0], argv) < 0)
 					{
 						printf("\033[0;33m");

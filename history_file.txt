@@ -1,1 +1,9 @@
 history
+echo
+echo
+echo
+mkdir lol
+ls
+rm -d lol
+ls
+exit
