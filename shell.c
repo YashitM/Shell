@@ -7,16 +7,16 @@
 
 // Internal External Command separation
 
-char *checkExists(char **argv, int argc)
+int checkExists(char **argv, int argc)
 {
 	for (int i = 0; i < argc; i++)
 	{
-		if (strstr(argv[i], "-c"))
+		if (strstr(argv[i], "-"))
 		{
 			return 1;
 		}
 	}
-	return "0";
+	return 0;
 }
 
 int	main() {
@@ -58,7 +58,6 @@ int	main() {
 				printf("%s\n",cwd);
 			}
 			else if (strstr(first, "history")) {
-				printf("%d LOL", checkExists(elements, len_array);
 				if(!checkExists(elements, len_array)) {
 					int c;
 					FILE *file;
