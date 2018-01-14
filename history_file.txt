@@ -7,3 +7,13 @@ ls
 rm -d lol
 ls
 exit
+echo
+echo
+echo hello
+echo ho ho howr 
+echo -n how
+echo lol
+echo -n lol
+echo -n lolo how aere you
+echo -n , how are you
+echo -e how are you

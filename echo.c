@@ -5,7 +5,7 @@ char *checkFlag(char **argv, int argc)
 {
     for (int i = 0; i < argc; i++)
     {
-        if (strstr(argv[i], "-"))
+        if (strstr(argv[i], "-n") || strstr(argv[i], "-e"))
         {
             return argv[i];
         }
@@ -14,37 +14,20 @@ char *checkFlag(char **argv, int argc)
 }
 
 int main(int argc, char **argv)
-{ 
-    printf("%d\n",argc);
-    for(int i=0; i<argc; i++) {
-        printf("%s\n",argv[i]);
-    }
+{
     if (argc == 3)
     {
         printf("\n");
     }
-    else
+    else if(argc > 3)
     {
         char str[100000];
         if(strstr(checkFlag(argv,argc),"0")) {
             for (int i = 3; i < argc; i++)
             {
-                FILE *file;
-                file = fopen(argv[i], "rb");
-                if (file)
-                {
-                    while (fscanf(file, "%s", str) != EOF)
-                    {
-                        printf("%s", str);
-                    }
-                    printf("\n");
-                    fclose(file);
-                }
-                else
-                {
-                    printf("cat: No such file or directory\n");
-                }
+                printf("%s ", argv[i]);
             }
+            printf("\n");
         }
         else {
             char *flag;
@@ -56,107 +39,26 @@ int main(int argc, char **argv)
                     break;
                 }
             }
-            if(strstr(flag,"-nE") || strstr(flag,"-En")) {
+            if(strstr(flag,"-n")) {
+                // without \n at the end
                 for (int i = 3; i < argc; i++)
                 {
-                    if (!strstr(argv[i], "-"))
-                    {
-                        FILE *file;
-                        file = fopen(argv[i], "rb");
-                        if (file)
-                        {
-                            int counter = 1;
-                            char ch;
-                            printf("$ %d ", counter);
-                            while (1)
-                            {
-                                ch = fgetc(file);
-                                if (ch == EOF)
-                                {
-                                    break;
-                                }
-                                printf("%c", ch);
-                                if (ch == '\n')
-                                {
-                                    counter += 1;
-                                    printf("$ %d ", counter);
-                                }
-                            }
-                            printf("\n\n");
-                            fclose(file);
+                    if(!strstr(argv[i],"-n")) {
+                        if(i != argc - 1) {
+                            printf("%s ", argv[i]);
                         }
-                        else
-                        {
-                            printf("cat: No such file or directory\n");
+                        else {
+                            printf("%s", argv[i]);
                         }
                     }
                 }
             }
-            else if(strstr(flag,"-n")) {
-                // Show Number at output lines
+            else if(strstr(flag,"-e")) {
                 for (int i = 3; i < argc; i++)
                 {
-                    if(!strstr(argv[i],"-")) {
-                        FILE *file;
-                        file = fopen(argv[i], "rb");
-                        if (file)
-                        {
-                            int counter = 1;
-                            char ch;
-                            printf("%d ", counter);
-                            while(1) {
-                                ch = fgetc(file);
-                                if (ch == EOF) {
-                                    break;
-                                }
-                                printf("%c", ch);
-                                if (ch == '\n') {
-                                    counter+=1;
-                                    printf("%d ", counter);
-                                }
-                            }
-                            printf("\n\n");
-                            fclose(file);
-                        }
-                        else
-                        {
-                            printf("cat: No such file or directory\n");
-                        }
-                    }
-                }
-            }
-            else if(strstr(flag,"-E")) {
-                for (int i = 3; i < argc; i++)
-                {
-                    if (!strstr(argv[i], "-"))
+                    if (!strstr(argv[i], "-e"))
                     {
-                        FILE *file;
-                        file = fopen(argv[i], "rb");
-                        if (file)
-                        {
-                            int counter = 1;
-                            char ch;
-                            printf("$ ");
-                            while (1)
-                            {
-                                ch = fgetc(file);
-                                if (ch == EOF)
-                                {
-                                    break;
-                                }
-                                printf("%c", ch);
-                                if (ch == '\n')
-                                {                                    counter += 1;
-                                    printf("$ ");
-                                }
-                            }
-                            printf("\n\n");
-                            fclose(file);
-                        }
-                        else
-                        {
-                            printf("cat: No such file or directory\n");
-                        }
+                        
                     }
                 }
             }

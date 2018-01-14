@@ -88,7 +88,6 @@ int	main() {
 			}
 			else if (strstr(first, "echo"))
 			{
-				printf("ECHOING!");
 				pid = fork();
 				if (pid == 0)
 				{

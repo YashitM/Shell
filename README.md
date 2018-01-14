@@ -15,4 +15,5 @@ Execute Internal and External Commands *with some flags*. Some of them are menti
 * pwd
 * history
 * date
+* echo
 * exit
