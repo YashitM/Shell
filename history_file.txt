@@ -70,3 +70,19 @@ ls
 echo -n "Helo there"
 umask
 echo -E "\x48"
+ls
+./shell
+ls
+echo -E hello there \x48
+echo -E hello \x48
+exit
+ls
+echo -E Hello
+echo -E hello
+echo -E "Hello"
+                            printf("\n");
+echo -E "Hello"
+echo -E hello tehrer
+                            printf("\n");
+echo -E hello there how are you
+exit

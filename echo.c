@@ -5,7 +5,7 @@ char *checkFlag(char **argv, int argc)
 {
     for (int i = 0; i < argc; i++)
     {
-        if (strstr(argv[i], "-n") || strstr(argv[i], "-e"))
+        if (strstr(argv[i], "-n") || strstr(argv[i], "-E"))
         {
             return argv[i];
         }
@@ -191,6 +191,7 @@ int main(int argc, char **argv)
                             {
                                 printf("%c", argv[i][j]);
                             }
+                            printf("\n");
                             break;
                         }
                         else if (i == startQuote)
@@ -206,6 +207,7 @@ int main(int argc, char **argv)
                             {
                                 printf("%c", argv[i][j]);
                             }
+                            printf("\n");
                             break;
                         }
                         else
@@ -230,6 +232,7 @@ int main(int argc, char **argv)
                             }
                         }
                     }
+                    printf("\n");
                 }
             }
         }
