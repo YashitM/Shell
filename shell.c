@@ -279,6 +279,9 @@ int	main() {
 	char *current_dir;
 	int counter = 0;
 	getcwd(const_dir, sizeof(const_dir));
+	char history_file_location[1000];
+	strcpy(history_file_location,const_dir);
+	strcat(history_file_location,"/history_file.txt");
 	while (1) {
 		getcwd(cwd, sizeof(cwd));
 		printf("\033[0;32m");
@@ -286,7 +289,7 @@ int	main() {
 		printf("\033[0m"); 
 		fgets(input_string,100,stdin);
 		FILE *file;
-		file = fopen("history_file.txt", "a");
+		file = fopen(history_file_location, "a");
 		fprintf(file, "%s" ,input_string);
 		fclose(file);
 		if(input_string[0]!='\n') {
@@ -306,7 +309,7 @@ int	main() {
 			}
 			else if(strstr(first,"cd")){
 				current_dir = strcat(cwd, "/");
-				chdir(strcat(current_dir, elements[1]));
+				chdir(elements[1]);
 			}
 			else if (strstr(first, "pwd")){
 				printf("%s\n",cwd);
@@ -315,7 +318,7 @@ int	main() {
 				if(!checkExists(elements, len_array)) {
 					int c;
 					FILE *file;
-					file = fopen("history_file.txt", "r");
+					file = fopen(history_file_location, "r");
 					if (file)
 					{
 						while ((c = getc(file)) != EOF)
@@ -324,7 +327,7 @@ int	main() {
 					}
 				}
 				else {
-					fclose(fopen("history_file.txt", "w"));
+					fclose(fopen(history_file_location, "w"));
 				}
 			}
 			else if (strstr(first, "cat")){

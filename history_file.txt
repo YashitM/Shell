@@ -1,158 +1,59 @@
+hisotry
 history
-echo
-echo
-echo
+cd /
+cd /
+ls
+cd /
+
+cd /mnt
+cd /
+cd /mnt
+cd /
+cd -
+cd mnt/c
+cd Users/yashi/Desktop
+ls
+cd Sem4/OS/Shell
+ls
+cd ..
+ls
+rm history_file.txt
+ls
+pwd
+ls
 mkdir lol
 ls
 rm -d lol
 ls
+touch hello
+ls
+rm hello
 exit
-echo
-echo
-echo hello
-echo ho ho howr 
-echo -n how
-echo lol
-echo -n lol
-echo -n lolo how aere you
-echo -n , how are you
-echo -e how are you
 ls
-cll.c
-cat shell.c
-cat shell.c cat.c
-clear
-echo "Hello"
-echo "Hello"
-echo "HellO"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
- 
-echo -n "Hello"
-echo 'Hello there how are you'
-echo "Hey"
-echo -n "Hey How are you"
-echo -n "Hello How are you"
-echo -n "Hello There"
-echo -n "Hey There"
-echo -n "Hello There"
-echo -n "Hello There How are you"
-echo -n 
-
-echo -n "Hello how are you"
-echo -n "Hello"
-for(int j = 1; j < strlen(argv[i]); j++) {
-                                    printf("%c", argv[i][j]);
-echo -n "Hello"
-echo -n 'Hello'
-echo -n "H sdjhfksjhdf sjdkhf ksjhdfksjhdfk jshd f"
-echo -n Hello there hoaesd jshdf
-echo Hello World
-echo "Hello There how are you"
-echo
-echo lol
-echo "lol"
-echo "Hello There"
-echo "Hello There how are you:
-echo "Hello here are you:
-echo "Hello Here are hou"
-echo "Hello There how are you"
-echo -n "Hello There how are you"
-echo Hello There how are you
-echo "Hello There how are you"
-echo "Hello There how are you"
-echo "Hello There how are you"
-echo "Hello There how are you"
-echo "Hello There how are you"
-echo "Hello There how are you"
+rm shell
 ls
-echo -n "Helo there"
-umask
-echo -E "\x48"
+cd ..
 ls
+rm -v history_file.txt
+ls
+rm -d hello
+ls
+ls
+touch lol
+rm lol
+ls
+exit
+rm lol
+ls
+rm lol
+ls
+rrm lol
+ls
+make
 ./shell
+touch lol
 ls
-echo -E hello there \x48
-echo -E hello \x48
-exit
-ls
-echo -E Hello
-echo -E hello
-echo -E "Hello"
-                            printf("\n");
-echo -E "Hello"
-echo -E hello tehrer
-                            printf("\n");
-echo -E hello there how are you
-exit
-echo hello
-echo -E hi
-echo -E hello ther howare you 
-echo -E hello there are you
-echo
-char *checkFlag(char **argv, int argc)
-echo hello
-echo -E how are you
-echo -E how are you
-echo -E "how are you"
-echo -n "hey"
-echo hey
-echo -n hey
-exit
-ls
-ls
-ls
-ls
-
-ls
-ls
-ls
+rm lol
 ls
 exit
-ls
-ls
-clear
-ls -a
 exit
-ls -a
-clear
-ls -m
-clear
-ls
-ls -a
-clear
-ls -m
-ls -m
-
-ls -m
-ls
-ls -m
-clera
-clear
-ls
-clear
-ls
-ls -m
-ls -m
-exit
-ls
-ls -a
-ls -m
-cd .
-cd ..
-ls
-cd ..
-ls
-ls
-ls
-ls
-ls
-cd ..
-ls
-cd ..
-ls
-cat cat.c
-cd .
-cd ..
-cd ..

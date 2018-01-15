@@ -20,7 +20,7 @@ int main(int argc, char **argv)
     time_t t = time(NULL);
     if (strstr(checkFlag(argv, argc), "0"))
     {
-        if(remove(argv[2])) {
+        if(remove(argv[3])) {
             printf("remove: No such file/directory found\n");
         }
     }
