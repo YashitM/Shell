@@ -141,3 +141,18 @@ ls -a
 ls -m
 cd .
 cd ..
+ls
+cd ..
+ls
+ls
+ls
+ls
+ls
+cd ..
+ls
+cd ..
+ls
+cat cat.c
+cd .
+cd ..
+cd ..

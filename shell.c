@@ -275,8 +275,10 @@ int	main() {
 	int pid;
 	char input_string[1000];
 	char cwd[1000];
+	char const_dir[1000];
 	char *current_dir;
 	int counter = 0;
+	getcwd(const_dir, sizeof(const_dir));
 	while (1) {
 		getcwd(cwd, sizeof(cwd));
 		printf("\033[0;32m");
@@ -327,8 +329,11 @@ int	main() {
 			}
 			else if (strstr(first, "cat")){
 				pid = fork();
+				char tempDirectory[1000];
+				strcpy(tempDirectory, const_dir);
+				strcat(tempDirectory, "/binaries/cat");
 				if(pid == 0) {
-					char *argv[] = {"./binaries/cat", (char *) elements};
+					char *argv[] = {tempDirectory, (char *)elements};
 					if(execvp(argv[0],argv)<0) {
 						printf("\033[0;33m");
 						printf("Command Can't Be Executed\n");
@@ -342,17 +347,16 @@ int	main() {
 			}
 			else if (strstr(first, "echo"))
 			{
-				// for(int i=0; i<len_array; i++) {
-				// 	printf("%s\n", elements[i]);
-				// }
-				// printf("%d\n", len_array);
 				executeEcho(len_array, elements);
 			}
 			else if (strstr(first, "ls")) {
 				pid = fork();
+				char tempDirectory[1000];
+				strcpy(tempDirectory, const_dir);
+				strcat(tempDirectory, "/binaries/ls");
 				if (pid == 0)
 				{
-					char *argv[] = {"./binaries/ls", (char *)elements};
+					char *argv[] = {tempDirectory, (char *)elements};
 					if (execvp(argv[0], argv) < 0)
 					{
 						printf("\033[0;33m");
@@ -368,9 +372,12 @@ int	main() {
 			}
 			else if (strstr(first,"date")) {
 				pid = fork();
+				char tempDirectory[1000];
+				strcpy(tempDirectory, const_dir);
+				strcat(tempDirectory, "/binaries/date");
 				if (pid == 0)
 				{
-					char *argv[] = {"./binaries/date", (char *)elements};
+					char *argv[] = {tempDirectory, (char *)elements};
 					if (execvp(argv[0], argv) < 0)
 					{
 						printf("\033[0;33m");
@@ -386,9 +393,12 @@ int	main() {
 			}
 			else if(strstr(first,"rm")) {
 				pid = fork();
+				char tempDirectory[1000];
+				strcpy(tempDirectory, const_dir);
+				strcat(tempDirectory, "/binaries/rm");
 				if (pid == 0)
 				{
-					char *argv[] = {"./binaries/rm", (char *)elements};
+					char *argv[] = {tempDirectory, (char *)elements};
 					if (execvp(argv[0], argv) < 0)
 					{
 						printf("\033[0;33m");
@@ -404,9 +414,12 @@ int	main() {
 			}
 			else if(strstr(first,"mkdir")) {
 				pid = fork();
+				char tempDirectory[1000];
+				strcpy(tempDirectory, const_dir);
+				strcat(tempDirectory, "/binaries/mkdir");
 				if (pid == 0)
 				{
-					char *argv[] = {"./binaries/mkdir", (char *)elements};
+					char *argv[] = {tempDirectory, (char *)elements};
 					if (execvp(argv[0], argv) < 0)
 					{
 						printf("\033[0;33m");
