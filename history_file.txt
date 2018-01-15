@@ -57,3 +57,77 @@ rm lol
 ls
 exit
 exit
+cd -
+make
+cd -
+ls
+cd ..
+cd Shell
+cd -
+cd -
+cd -
+cd -
+cd -
+cd -
+cd -
+cd -
+cd -
+cd .
+cd ..
+cd -
+cd -
+cd -
+exit
+cd ..
+cd -
+cd ..
+cd -
+cd -
+cd -
+env
+cd ..
+env
+exit
+cd lol
+cd ..
+ls
+cd -
+exit
+env
+cd ..
+cd -
+cd -
+cd -
+cd -
+cd -
+cd -
+cd -
+cd -
+cd ..
+cd -
+cd -
+cd 
+cd
+cd .
+cd .
+cd lol
+make
+cd lol
+cd llolll loool
+cd lol
+cd
+cd
+cd -
+ls
+cd
+cd -
+cd ~
+cd -
+cd ..
+cd -
+ls
+cd -
+cd -
+ls
+exiit
+exit

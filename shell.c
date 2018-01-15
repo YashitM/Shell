@@ -309,7 +309,32 @@ int	main() {
 			}
 			else if(strstr(first,"cd")){
 				current_dir = strcat(cwd, "/");
-				chdir(elements[1]);
+				if(len_array != 1) {
+					if(strcmp(elements[1],"-")==0) {
+						if(getenv("OLDPWD")) {
+							char *previous_directory = getenv("OLDPWD");
+							setenv("OLDPWD", current_dir, 1);
+							chdir(previous_directory);
+						}
+						else {
+							printf("bash: cd: OLDPWD not set\n");
+						}
+					}
+					else if(strcmp(elements[1],"~")==0) {
+						char *new_directory = getenv("HOME");
+						setenv("OLDPWD", current_dir, 1);
+						chdir(new_directory);
+					}
+					else {
+						setenv("OLDPWD", current_dir, 1);
+						chdir(elements[1]);
+					}
+				}
+				else {
+					char *new_directory = getenv("HOME");
+					setenv("OLDPWD", current_dir, 1);
+					chdir(new_directory);
+				}
 			}
 			else if (strstr(first, "pwd")){
 				printf("%s\n",cwd);
