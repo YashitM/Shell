@@ -23,3 +23,46 @@ cat shell.c
 cat shell.c cat.c
 clear
 echo "Hello"
+echo "Hello"
+echo "HellO"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+ 
+echo -n "Hello"
+echo 'Hello there how are you'
+echo "Hey"
+echo -n "Hey How are you"
+echo -n "Hello How are you"
+echo -n "Hello There"
+echo -n "Hey There"
+echo -n "Hello There"
+echo -n "Hello There How are you"
+echo -n 
+
+echo -n "Hello how are you"
+echo -n "Hello"
+for(int j = 1; j < strlen(argv[i]); j++) {
+                                    printf("%c", argv[i][j]);
+echo -n "Hello"
+echo -n 'Hello'
+echo -n "H sdjhfksjhdf sjdkhf ksjhdfksjhdfk jshd f"
+echo -n Hello there hoaesd jshdf
+echo Hello World
+echo "Hello There how are you"
+echo
+echo lol
+echo "lol"
+echo "Hello There"
+echo "Hello There how are you:
+echo "Hello here are you:
+echo "Hello Here are hou"
+echo "Hello There how are you"
+echo -n "Hello There how are you"
+echo Hello There how are you
+echo "Hello There how are you"
+echo "Hello There how are you"
+echo "Hello There how are you"
+echo "Hello There how are you"
+echo "Hello There how are you"
+echo "Hello There how are you"
