@@ -86,3 +86,17 @@ echo -E hello tehrer
                             printf("\n");
 echo -E hello there how are you
 exit
+echo hello
+echo -E hi
+echo -E hello ther howare you 
+echo -E hello there are you
+echo
+char *checkFlag(char **argv, int argc)
+echo hello
+echo -E how are you
+echo -E how are you
+echo -E "how are you"
+echo -n "hey"
+echo hey
+echo -n hey
+exit
