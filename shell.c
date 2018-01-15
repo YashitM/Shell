@@ -348,6 +348,24 @@ int	main() {
 				// printf("%d\n", len_array);
 				executeEcho(len_array, elements);
 			}
+			else if (strstr(first, "ls")) {
+				pid = fork();
+				if (pid == 0)
+				{
+					char *argv[] = {"./binaries/ls", (char *)elements};
+					if (execvp(argv[0], argv) < 0)
+					{
+						printf("\033[0;33m");
+						printf("Command Can't Be Executed\n");
+						printf("\033[0m");
+						exit(1);
+					}
+				}
+				else
+				{
+					wait(NULL);
+				}
+			}
 			else if (strstr(first,"date")) {
 				pid = fork();
 				if (pid == 0)
