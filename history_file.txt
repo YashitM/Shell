@@ -136,3 +136,8 @@ ls
 ls -m
 ls -m
 exit
+ls
+ls -a
+ls -m
+cd .
+cd ..
