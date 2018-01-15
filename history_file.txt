@@ -66,3 +66,7 @@ echo "Hello There how are you"
 echo "Hello There how are you"
 echo "Hello There how are you"
 echo "Hello There how are you"
+ls
+echo -n "Helo there"
+umask
+echo -E "\x48"
