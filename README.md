@@ -123,6 +123,8 @@ There is an outer ```while``` loop which keeps the Shell Running. The user input
     
 Extensive error handling is done for each command.
 
+*A Makefile is also included!*
+
 ### Note
 
 * The main binary ```shell```, is to be kept in the same directory as the ```C``` files. The other binaries, are stored in the ```binaries``` folder. It is thus suggested to use the provied ```Makefile```, as it takes care of this. 

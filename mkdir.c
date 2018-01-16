@@ -88,6 +88,7 @@ int main(int argc, char **argv)
                 numString = argv[i];
                 if (!strstr(argv[i], "-") && !(*ptr!='\0' || ptr==argv[i]))
                 {
+                    printf("Hello");
                     break;
                 }
             }
