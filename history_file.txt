@@ -173,3 +173,38 @@ exit
 echo "hello
 make
 echo "Hello
+history 0
+cd
+exit
+mkdir
+mkdir lol
+rm lol
+ls
+exit
+ls
+mkdir lol
+rm lol
+ls
+history 100000
+clear
+exit
+mkdir lol
+ls
+ls
+rm lol
+exit
+ls
+mkdir lol
+rm lol
+ls
+rm -d lol
+c
+ls
+touch lol
+ls
+ls
+rm lol
+ls
+ls
+make
+exit

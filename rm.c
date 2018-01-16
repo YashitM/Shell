@@ -1,5 +1,9 @@
 #include <stdio.h>
 #include <string.h>
+#include <dirent.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
 #include <time.h>
 
 char *checkFlag(char **argv, int argc)
@@ -14,6 +18,13 @@ char *checkFlag(char **argv, int argc)
     return "0";
 }
 
+int is_regular_file(const char *path)
+{
+    struct stat path_stat;
+    stat(path, &path_stat);
+    return S_ISREG(path_stat.st_mode);
+}
+
 int main(int argc, char **argv)
 {
     char str[100000];
@@ -25,8 +36,13 @@ int main(int argc, char **argv)
     }
     if (strstr(checkFlag(argv, argc), "0"))
     {
-        if(remove(argv[3])) {
-            printf("remove: No such file/directory found\n");
+        if(is_regular_file(argv[3])) {
+            if(remove(argv[3])) {
+                printf("remove: No such file/directory found\n");
+            }
+        }
+        else {
+            printf("rm: cannot remove '%s': Is a directory\n", argv[3]);
         }
     }
     else
@@ -63,14 +79,20 @@ int main(int argc, char **argv)
             {
                 if (!strstr(argv[i], "-"))
                 {
-                    if (!remove(argv[i]))
+                    if (is_regular_file(argv[3]))
                     {
-                        printf("removed '%s'\n", argv[i]);
+                        if (!remove(argv[i]))
+                        {
+                            printf("removed '%s'\n", argv[i]);
+                        }
+                        else
+                        {
+                            printf("rm: cannot remove '%s': No such file or directory\n", argv[i]);
+                            break;
+                        }
                     }
-                    else
-                    {
-                        printf("rm: cannot remove '%s': No such file or directory\n", argv[i]);
-                        break;
+                    else {
+                        printf("rm: cannot remove '%s': Is a directory\n", argv[i]);
                     }
                 }
             }
@@ -81,6 +103,7 @@ int main(int argc, char **argv)
             {
                 if (!strstr(argv[i], "-"))
                 {
+                    
                     if (remove(argv[i]))
                     {
                         printf("rm: cannot remove '%s': No such file or directory\n", argv[i]);
