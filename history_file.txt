@@ -13,3 +13,11 @@ ls
 ls /mnt
 make
 ls -l
+ls
+ls -a
+cd ~
+cd -
+cd /
+cd -
+cd ~
+exit
