@@ -13,7 +13,7 @@ char *checkFlag(char **argv, int argc) {
 int main(int argc, char **argv) {
     if (argc < 4)
     {
-        printf("cat: No such file or directory");
+        printf("cat: No such file or directory\n");
     }
     else
     {
@@ -59,7 +59,7 @@ int main(int argc, char **argv) {
                         {
                             int counter = 1;
                             char ch;
-                            printf("$ %d ", counter);
+                            printf("%d ", counter);
                             while (1)
                             {
                                 ch = fgetc(file);
@@ -67,14 +67,17 @@ int main(int argc, char **argv) {
                                 {
                                     break;
                                 }
-                                printf("%c", ch);
                                 if (ch == '\n')
                                 {
                                     counter += 1;
-                                    printf("$ %d ", counter);
+                                    printf("$");
+                                    printf("%c",ch);
+                                    printf("%d",counter);
+                                }
+                                else {
+                                    printf("%c", ch);
                                 }
                             }
-                            printf("\n\n");
                             fclose(file);
                         }
                         else

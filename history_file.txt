@@ -47,3 +47,13 @@ cat -E shell.c
 cat -E shell.c
 cat -E rm.c
 exit
+cat -lol
+cat -lol shell.c
+cat
+cat lo
+cat -loool
+cat -nE rm.c
+make
+exit
+cat -nE rm.c
+exit
