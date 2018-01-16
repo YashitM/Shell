@@ -170,3 +170,6 @@ echo "hskjdhf"
 echo "ksjdsdfj
 echo -n hello
 exit
+echo "hello
+make
+echo "Hello

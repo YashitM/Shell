@@ -108,6 +108,10 @@ void executeEcho(int argc, char **argv)
 					printf(" ");
 				}
 			}
+			else if ((foundStartQuote == 1 && foundEndQuote == 0))
+			{
+				printf("echo: Invalid use of Quotations.\n");
+			}
 			else
 			{
 				for (int i = 1; i < argc; i++)
@@ -184,6 +188,10 @@ void executeEcho(int argc, char **argv)
 						}
 						printf(" ");
 					}
+				}
+				else if ((foundStartQuote == 1 && foundEndQuote == 0))
+				{
+					printf("echo: Invalid use of Quotations.\n");
 				}
 				else
 				{
@@ -262,7 +270,7 @@ void executeEcho(int argc, char **argv)
 				}
 				else if ((foundStartQuote == 1 && foundEndQuote == 0))
 				{
-					printf("echo: Invalid use of Quotations.");
+					printf("echo: Invalid use of Quotations.\n");
 				}
 				else
 				{

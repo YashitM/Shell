@@ -120,6 +120,7 @@ There is an outer ```while``` loop which keeps the Shell Running. The user input
 
 * Other Commands
     * Commands other than the ones mentioned above can also be executed in the shell. The External Commands will be executed using the default binaries (used by the shell). Again, so as to execute these commands, a child process is created using ```execvp()``` and the command given by the user is executesd. After the completion, the control is given back to the shell.
+    
 Extensive error handling is done for each command.
 
 ### Note
