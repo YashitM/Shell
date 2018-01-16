@@ -83,6 +83,7 @@ Execute Internal and External Commands *with some flags*. A detailed description
 
 ## Working
 
+There is an outer ```while``` loop which keeps the Shell Running. The user input is first parsed and split into a ```char``` array which is passed onto the ```if``` conditions that execute the commands.
 * Internal Commands
     * These commands are executed within the main file. The user input is parsed and then executed based on the source code in the ```shell.c``` file.
 
@@ -94,4 +95,4 @@ Execute Internal and External Commands *with some flags*. A detailed description
 
 ### Note
 
-The main binary ```shell```, is to be kept in the same directory as the ```C``` files. The other binaries, are stored in the ```binaries``` folder.
+The main binary ```shell```, is to be kept in the same directory as the ```C``` files. The other binaries, are stored in the ```binaries``` folder. It is thus suggested to use the provied ```Makefile```, as it takes care of this. 
