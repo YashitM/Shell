@@ -9,7 +9,7 @@ A basic Shell that can run various Internal and Exeternal commands.
 ```
 sudo apt-get install gcc
 ```
-
+### Run
 To fire up the Shell, type:
 ```
 make
@@ -21,27 +21,64 @@ chmod +x shell
 
 Execute Internal and External Commands *with some flags*. A detailed description is given below:
 * External Commands:
-    * ```ls``` : List directory contents
-        * ```-a``` : Do not ignore entries starting with .
-        * ```-m``` : Fill width with a comma separated list of entries
+    * ```ls``` : List directory contents.
+        * Flags: 
+            * ```-a``` : Do not ignore entries starting with .
+            * ```-m``` : Fill width with a comma separated list of entries
+        * Implementation:
+            * Using the ```opendir()``` and ```readdir()``` functions in the ```dirent.h``` library.
+    * ```mkdir``` : Make Directories.
+        * Flags:
+            * ```-v``` : Print a message for each created directory.
+            * ```-m``` : Set file mode (as in chmod).
+        * Implementation:
+            * Using the ```mkdir()``` function in C.
+    * ```rm``` : Remove Files or Directories.
+        * Flags:
+            * ```-v``` : Explain what is being done.
+            * ```-d``` : Remove empty directories.
+        * Implementation:
+            * Using the ```remove()``` function in C.
+    * ```cat``` : Concatenate files and print on the standard output
+        * Flags:
+            * ```-n``` : Number all output lines.
+            * ```-E``` : display ```$``` at the end of each line
+        * Implementation:
+            * By simply parsing the input and reading the files using ```fopen()``` and ```fgetc()``` functions in C.
+        * Additional Features:
+            * ```cat <multiple files separated using space>``` will read out the contents of all the files mentioned.
+    * ```date``` : Print the System Date and Time.
+        * Flags:
+            * ```-R``` : Output Date and Time in RFC 2822 format.
+            * ```-u``` : Output Date and Time in UTC format.
+        * Implementatin:
+            * Using the ```asctime()``` and ```strftime()``` functions in ```time.h``` library.
 
 * Internal Commands:    
-    * ```cd``` : Change Directory. Implemented using the ```chdir()``` function in C.
-        * ```cd /``` : Move to the Root Directory
-        * ```cd -``` : Move to the previously visited directory. Implemented by reading (and altering) the ```OLDPWD``` Enviroment Variable.
-        * ```cd ~``` : Move to the Home Directory. The Home Directory location is read from the ```HOME``` Environment Variable. 
-    * ```echo``` : Display a line of text. Implemented by simply parsing the input and displaying the result. 
-        * ```-n``` : Do not output the trailing newline
-        * ```-E``` : Disable interpretation of backslash escapes
-    * ```pwd``` : Print name of current/working directory. This is implemented using the ```getcwd()``` function.
-    * ```history``` : Display all the previously executed commands in the shell. Implemented by keeping a ```history_file.txt``` to which all of the commands executed are appended.
-        * ```-c``` : Clear the contents of the Histort File.
+    * ```cd``` : Change Directory.
+        * Additional Features:
+            * ```cd /``` : Move to the Root Directory
+            * ```cd -``` : Move to the previously visited directory. Implemented by reading (and altering) the ```OLDPWD``` Enviroment Variable.
+            * ```cd ~``` : Move to the Home Directory. The Home Directory location is read from the ```HOME``` Environment Variable. 
+        * Implementation:
+            * Using the ```chdir()``` function.
+        * Assumptions
+            * No Spaces between File/Directory names.
+    * ```echo``` : Display a line of text.
+        * Flags:
+            * ```-n``` : Do not output the trailing newline
+            * ```-E``` : Disable interpretation of backslash escapes
+        * Implementation:
+            * By simply parsing the input and displaying the result. ```"``` in String is also taken care of.
+    * ```pwd``` : Print name of current/working directory. 
+        * Implementation:
+            * Using the ```getcwd()``` function.
+    * ```history``` : Display all the previously executed commands in the shell. 
+        * Flags:
+            * ```-c``` : Clear the contents of the Histort File.
+        * Implementation:
+            * By keeping a ```history_file.txt``` to which all of the commands executed are appended.
     * ```exit``` : Exit from the Shell.
- 
-* mkdir
-* rm
-* cat
-* date
 
 ## Working
 

@@ -21,3 +21,6 @@ cd /
 cd -
 cd ~
 exit
+cat *
+date -u
+exit
