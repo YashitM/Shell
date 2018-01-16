@@ -16,7 +16,7 @@ char *checkFlag(char **argv, int argc)
 {
     for (int i = 0; i < argc; i++)
     {
-        if (strstr(argv[i], "-a") || strstr(argv[i], "-m"))
+        if (strstr(argv[i], "-"))
         {
             return argv[i];
         }
@@ -159,7 +159,7 @@ int main(int argc, char **argv)
             }
         }
         else {
-            printf("Command Cannot Be Executed\n");
+            printf("ls: invalid option\n");
         }     
     }
     return 0;

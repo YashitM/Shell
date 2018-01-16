@@ -6,9 +6,8 @@ A basic Shell that can run various Internal and Exeternal commands.
 
 ### Prerequisites
 * GCC Compiler
-```
-sudo apt-get install gcc
-```
+
+```sudo apt-get install gcc```
 ### Run
 To fire up the Shell, type:
 ```

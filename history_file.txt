@@ -30,3 +30,16 @@ history 2
 history 3
 clear
 exit
+ls -lol
+ls lol
+ls -g
+ls -u
+ls -m
+ls -a
+ls -aaaa
+ls -aaaaa
+ls -gdflkjgdf
+ls -aaa
+ls -ammm
+ls -mmmmmmm
+exit
