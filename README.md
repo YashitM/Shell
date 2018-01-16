@@ -76,6 +76,7 @@ Execute Internal and External Commands *with some flags*. A detailed description
     * ```history``` : Display all the previously executed commands in the shell. 
         * Flags:
             * ```-c``` : Clear the contents of the Histort File.
+            * ```<number>``` : Print the last ```<number>``` contents of the file.
         * Implementation:
             * By keeping a ```history_file.txt``` to which all of the commands executed are appended.
     * ```exit``` : Exit from the Shell.

@@ -260,6 +260,10 @@ void executeEcho(int argc, char **argv)
 						printf(" ");
 					}
 				}
+				else if ((foundStartQuote == 1 && foundEndQuote == 0))
+				{
+					printf("echo: Invalid use of Quotations.");
+				}
 				else
 				{
 					for (int i = 1; i < argc; i++)
@@ -396,8 +400,10 @@ int	main() {
 						fclose(file);
 					}
 				}
-				else if(len_array == 2) {
-					if (strstr(elements[1],"-")) {
+				else if(len_array == 2) 
+				{
+					if (strstr(elements[1],"-")) 
+					{
 						if (strcmp(elements[1],"-c") == 0) {
 							fclose(fopen(history_file_location, "w"));
 						}
@@ -410,9 +416,30 @@ int	main() {
 						int num;
 						char *ptr;
 						num = strtol(elements[1], &ptr, 10);
-						numberOfLines = getNumberOfLines(history_file_location);
+						int numberOfLines = getNumberOfLines(history_file_location);
 						if(num < numberOfLines) {
-							
+							int c;
+							FILE *file;
+							int currentLineCounter = 0;
+							file = fopen(history_file_location, "r");
+							if (file)
+							{
+								while ((c = getc(file)) != EOF)
+								{
+									if(c == '\n') {
+										currentLineCounter += 1;
+									}
+									if(currentLineCounter > numberOfLines - num) {
+										putchar(c);
+									}
+									else if (currentLineCounter == numberOfLines - num) {
+										if(c != '\n') {
+											putchar(c);
+										}
+									}
+								}
+								fclose(file);
+							}
 						}
 						else {
 							int c;
@@ -422,7 +449,7 @@ int	main() {
 							{
 								while ((c = getc(file)) != EOF)
 								{
-									putchar(c)
+									putchar(c);
 								}
 								fclose(file);
 							}

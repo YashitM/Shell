@@ -7,3 +7,26 @@ history -g
 history ksjdhfk ksjhfkdjhf gkjdhf g
 history 11
 history 11
+history 10
+ls
+history 10
+lol
+cd
+cd -
+ls
+ls -a
+echo "Hello
+exit
+history
+history 3
+history 3
+history
+history
+make
+history
+history 2
+make
+history 2
+history 3
+clear
+exit
