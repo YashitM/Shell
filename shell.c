@@ -375,7 +375,9 @@ int	main() {
 					}
 					else {
 						setenv("OLDPWD", current_dir, 1);
-						chdir(elements[1]);
+						if(chdir(elements[1])) {
+							printf("bash: cd: %s: No such file or directory\n", elements[1]);
+						}
 					}
 				}
 				else {

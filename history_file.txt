@@ -134,3 +134,12 @@ rm
 rm -v
 rm -v
 exit
+cd lll
+mkae
+exit
+cd
+cd -
+cd llll
+cd ..
+cd Shell
+exit
