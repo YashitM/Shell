@@ -11,10 +11,6 @@ char *checkFlag(char **argv, int argc) {
 }
 
 int main(int argc, char **argv) {
-    // printf("%d\n",argc);
-    // for(int i=0; i<argc; i++) {
-    //     printf("%s\n",argv[i]);
-    // }
     if (argc < 4)
     {
         printf("cat: No such file or directory");
@@ -132,7 +128,6 @@ int main(int argc, char **argv) {
                         {
                             int counter = 1;
                             char ch;
-                            printf("$ ");
                             while (1)
                             {
                                 ch = fgetc(file);
@@ -140,13 +135,12 @@ int main(int argc, char **argv) {
                                 {
                                     break;
                                 }
-                                printf("%c", ch);
                                 if (ch == '\n')
                                 {                                    counter += 1;
-                                    printf("$ ");
+                                    printf("$");
                                 }
+                                printf("%c", ch);
                             }
-                            printf("\n\n");
                             fclose(file);
                         }
                         else

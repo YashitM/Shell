@@ -43,3 +43,7 @@ ls -aaa
 ls -ammm
 ls -mmmmmmm
 exit
+cat -E shell.c
+cat -E shell.c
+cat -E rm.c
+exit
