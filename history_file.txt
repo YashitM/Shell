@@ -128,3 +128,9 @@ rm -d lol
 ls
 mkdir -v
 exit
+rm -f
+rm -l
+rm
+rm -v
+rm -v
+exit
