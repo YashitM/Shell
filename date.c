@@ -18,14 +18,14 @@ int main(int argc, char **argv)
 {
     char str[100000];
     time_t t = time(NULL);
-    if (strstr(checkFlag(argv, argc), "0"))
+    if (strstr(checkFlag(argv, argc), "0") && argc == 3)
     {
         printf("%s", asctime(localtime(&t)));
     }
-    else
+    else if (argc == 4 && !strstr(checkFlag(argv, argc), "0"))
     {
         char *flag;
-        for (int i = 0; i < argc; i++)
+        for (int i = 3; i < argc; i++)
         {
             if (strstr(argv[i], "-"))
             {
@@ -43,5 +43,11 @@ int main(int argc, char **argv)
             strftime(date, sizeof(date), "%a %d %b %Y %T %z", localtime(&t));
             printf("%s\n", date);
         }
+        else {
+            printf("date: invalid option %s\n", flag);
+        }
+    }
+    else {
+        printf("date: invalid date\n");
     }
 }

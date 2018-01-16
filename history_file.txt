@@ -79,3 +79,22 @@ cat -l
 cat -n
 make
 cat -n
+date -lol
+date -lol
+date hello
+mkdir -abdc
+ls
+date lol
+date
+date -lol
+date -r
+date -R
+make
+exit
+date -l
+date -R
+date -u
+date -l
+date lol
+date sdklf lksdj flskjd flskj flskjd lfksjdf
+exit
