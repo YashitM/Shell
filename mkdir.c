@@ -21,6 +21,10 @@ int main(int argc, char **argv)
 {
     char str[100000];
     time_t t = time(NULL);
+    if(argc == 3) {
+        printf("mkdir: missing operand\n");
+        return 0;
+    }
     if (strstr(checkFlag(argv, argc), "0"))
     {
         for(int i=3; i<argc; i++) {
@@ -32,6 +36,23 @@ int main(int argc, char **argv)
     else
     {
         char *flag;
+        int foundFileName = 0;
+        for (int i = 3; i < argc; i++)
+        {
+            if (strstr(argv[i], "-"))
+            {
+                flag = argv[i];
+            }
+            else if (foundFileName == 0)
+            {
+                foundFileName = 1;
+            }
+        }
+        if (foundFileName == 0)
+        {
+            printf("mkdir: missing operand\n");
+            return 0;
+        }
         for (int i = 0; i < argc; i++)
         {
             if (strstr(argv[i], "-"))
@@ -86,6 +107,9 @@ int main(int argc, char **argv)
                     break;
                 }
             }
+        }
+        else {
+            printf("mkdir: invalid option %s\n", flag);
         }
     }
 }

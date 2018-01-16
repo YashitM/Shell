@@ -98,3 +98,33 @@ date -l
 date lol
 date sdklf lksdj flskjd flskj flskjd lfksjdf
 exit
+mkdir
+ls
+mkdir -l
+mkdir -abcd
+cat lol
+mkdir -v
+mkdir
+make
+./shell
+mkdir
+make
+./shell
+mkdir
+exit
+exit
+exit
+mkdir -v
+mkdir -v l
+ls
+rm -d -v l
+ls
+ls lol
+mkdir
+mkdir
+mkdir lol
+ls
+rm -d lol
+ls
+mkdir -v
+exit
