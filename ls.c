@@ -157,7 +157,10 @@ int main(int argc, char **argv)
                 printf("\n");
                 closedir(dir);
             }
-        }        
+        }
+        else {
+            printf("Command Cannot Be Executed\n");
+        }     
     }
     return 0;
 }

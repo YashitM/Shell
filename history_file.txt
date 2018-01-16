@@ -1,133 +1,15 @@
-hisotry
-history
-cd /
-cd /
-ls
-cd /
-
-cd /mnt
-cd /
-cd /mnt
-cd /
-cd -
-cd mnt/c
-cd Users/yashi/Desktop
-ls
-cd Sem4/OS/Shell
-ls
-cd ..
-ls
-rm history_file.txt
-ls
-pwd
-ls
-mkdir lol
-ls
-rm -d lol
-ls
-touch hello
-ls
-rm hello
-exit
-ls
-rm shell
-ls
-cd ..
-ls
-rm -v history_file.txt
-ls
-rm -d hello
 ls
 ls
-touch lol
-rm lol
+ls /hello
+ls /mnt
 ls
-exit
-rm lol
+ls -a
+ls -m
+ll
+ll
+ls -l
+clear
 ls
-rm lol
-ls
-rrm lol
-ls
+ls /mnt
 make
-./shell
-touch lol
-ls
-rm lol
-ls
-exit
-exit
-cd -
-make
-cd -
-ls
-cd ..
-cd Shell
-cd -
-cd -
-cd -
-cd -
-cd -
-cd -
-cd -
-cd -
-cd -
-cd .
-cd ..
-cd -
-cd -
-cd -
-exit
-cd ..
-cd -
-cd ..
-cd -
-cd -
-cd -
-env
-cd ..
-env
-exit
-cd lol
-cd ..
-ls
-cd -
-exit
-env
-cd ..
-cd -
-cd -
-cd -
-cd -
-cd -
-cd -
-cd -
-cd -
-cd ..
-cd -
-cd -
-cd 
-cd
-cd .
-cd .
-cd lol
-make
-cd lol
-cd llolll loool
-cd lol
-cd
-cd
-cd -
-ls
-cd
-cd -
-cd ~
-cd -
-cd ..
-cd -
-ls
-cd -
-cd -
-ls
-exiit
-exit
+ls -l
