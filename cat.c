@@ -34,7 +34,7 @@ int main(int argc, char **argv) {
                 }
                 else
                 {
-                    printf("cat: No such file or directory\n");
+                    printf("cat: %s: No such file or directory\n", argv[i]);
                 }
             }
         }

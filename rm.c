@@ -66,11 +66,10 @@ int main(int argc, char **argv)
                     if (!remove(argv[i]))
                     {
                         printf("removed '%s'\n", argv[i]);
-                        break;
                     }
                     else
                     {
-                        printf("remove: No such file/directory found\n");
+                        printf("rm: cannot remove '%s': No such file or directory\n", argv[i]);
                         break;
                     }
                 }
@@ -82,11 +81,7 @@ int main(int argc, char **argv)
             {
                 if (!strstr(argv[i], "-"))
                 {
-                    if (!remove(argv[i]))
-                    {
-                        break;
-                    }
-                    else
+                    if (remove(argv[i]))
                     {
                         printf("rm: cannot remove '%s': No such file or directory\n", argv[i]);
                         break;

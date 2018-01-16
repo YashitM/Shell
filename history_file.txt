@@ -143,3 +143,30 @@ cd llll
 cd ..
 cd Shell
 exit
+history
+history 10
+history -l
+exit
+mkdir hello there
+ls
+rm -d hello there
+ls
+exit
+ls
+rm -d hello
+rm -d there
+ls
+mkdir hello there how are you
+ls
+rm -d hello there how are you
+ls
+mkdir hello there how are you
+rm hello there how are you -d
+ls
+cat lol.txt shell.c
+cat
+echo 'lol'
+echo "hskjdhf"
+echo "ksjdsdfj
+echo -n hello
+exit

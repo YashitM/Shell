@@ -95,7 +95,6 @@ int main(int argc, char **argv)
             {
                 if (!strstr(argv[i], "-") && !strstr(argv[i],numString))
                 {
-                    // printf("%d\n",num);
                     if (mkdir(argv[i],num) != 0)
                     {
                         printf("mkdir: cannot create directory '%s'\n", argv[i]);
