@@ -40,13 +40,20 @@ int main(int argc, char **argv) {
         }
         else {
             char *flag;
-            for (int i = 0; i < argc; i++)
+            int foundFileName = 0;
+            for (int i = 3; i < argc; i++)
             {
                 if (strstr(argv[i], "-"))
                 {
                     flag = argv[i];
-                    break;
                 }
+                else if (foundFileName == 0) {
+                    foundFileName = 1;
+                }
+            }
+            if (foundFileName == 0) {
+                printf("cat: No such file or directory\n");
+                return 0;
             }
             if(strstr(flag,"-nE") || strstr(flag,"-En")) {
                 for (int i = 3; i < argc; i++)
@@ -72,7 +79,7 @@ int main(int argc, char **argv) {
                                     counter += 1;
                                     printf("$");
                                     printf("%c",ch);
-                                    printf("%d",counter);
+                                    printf("%d ",counter);
                                 }
                                 else {
                                     printf("%c", ch);
@@ -129,7 +136,6 @@ int main(int argc, char **argv) {
                         file = fopen(argv[i], "rb");
                         if (file)
                         {
-                            int counter = 1;
                             char ch;
                             while (1)
                             {
@@ -139,7 +145,7 @@ int main(int argc, char **argv) {
                                     break;
                                 }
                                 if (ch == '\n')
-                                {                                    counter += 1;
+                                {
                                     printf("$");
                                 }
                                 printf("%c", ch);
@@ -152,6 +158,9 @@ int main(int argc, char **argv) {
                         }
                     }
                 }
+            }
+            else {
+                printf("cat: invalid option %s\n", flag);
             }
         }
     }

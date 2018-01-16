@@ -57,3 +57,25 @@ make
 exit
 cat -nE rm.c
 exit
+cat -l
+cat -l
+make
+./shell
+
+cat -l
+exit
+exit
+cat -l
+cat -n lol.txt
+make
+./shell
+
+cat -l lol
+make
+./shell
+cat -l lol
+cat -l lol
+cat -l
+cat -n
+make
+cat -n
