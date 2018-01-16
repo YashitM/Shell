@@ -29,6 +29,18 @@ char *checkFlag(char **argv, int argc)
 	return "0";
 }
 
+char *checkFlagHistory(char **argv, int argc)
+{
+	for (int i = 0; i < argc; i++)
+	{
+		if (strstr(argv[i], "-c"))
+		{
+			return argv[i];
+		}
+	}
+	return "0";
+}
+
 void executeEcho(int argc, char **argv)
 {
 	if (argc == 1)
@@ -271,6 +283,38 @@ void executeEcho(int argc, char **argv)
 	}
 }
 
+int checkNumber(char *numString)
+{
+	int num;
+	char *ptr;
+	num = strtol(numString, &ptr, 10);
+	if (!(*ptr != '\0' || ptr == numString))
+	{
+		return 1;
+	}
+	return 0;
+}
+
+int getNumberOfLines(char *history_file_location)
+{
+	int numberOfLines = 0;
+	int c;
+	FILE *file;
+	file = fopen(history_file_location, "r");
+	if (file)
+	{
+		while ((c = getc(file)) != EOF)
+		{
+			if (c == '\n')
+			{
+				numberOfLines += 1;
+			}
+		}
+		fclose(file);
+	}
+	return numberOfLines;
+}
+
 int	main() {
 	int pid;
 	char input_string[1000];
@@ -340,19 +384,56 @@ int	main() {
 				printf("%s\n",cwd);
 			}
 			else if (strstr(first, "history")) {
-				if(!checkExists(elements, len_array)) {
+				if(len_array == 1) {
 					int c;
 					FILE *file;
 					file = fopen(history_file_location, "r");
 					if (file)
 					{
-						while ((c = getc(file)) != EOF)
+						while ((c = getc(file)) != EOF) {
 							putchar(c);
+						}
 						fclose(file);
 					}
 				}
+				else if(len_array == 2) {
+					if (strstr(elements[1],"-")) {
+						if (strcmp(elements[1],"-c") == 0) {
+							fclose(fopen(history_file_location, "w"));
+						}
+						else
+						{
+							printf("bash: history: %s: invalid option\n", elements[1]);
+						}
+					}
+					else if(checkNumber(elements[1])) {
+						int num;
+						char *ptr;
+						num = strtol(elements[1], &ptr, 10);
+						numberOfLines = getNumberOfLines(history_file_location);
+						if(num < numberOfLines) {
+							
+						}
+						else {
+							int c;
+							FILE *file;
+							file = fopen(history_file_location, "r");
+							if (file)
+							{
+								while ((c = getc(file)) != EOF)
+								{
+									putchar(c)
+								}
+								fclose(file);
+							}
+						}
+					}
+					else {
+						printf("bash: history: numeric argument required\n");
+					}
+				}
 				else {
-					fclose(fopen(history_file_location, "w"));
+					printf("bash: history: numeric argument required\n");
 				}
 			}
 			else if (strstr(first, "cat")){

@@ -1,26 +1,9 @@
-ls
-ls
-ls /hello
-ls /mnt
-ls
-ls -a
-ls -m
-ll
-ll
-ls -l
-clear
-ls
-ls /mnt
-make
-ls -l
-ls
-ls -a
-cd ~
-cd -
-cd /
-cd -
-cd ~
-exit
-cat *
-date -u
-exit
+history
+history 1
+history -g
+history -g
+history -g
+history -g
+history ksjdhfk ksjhfkdjhf gkjdhf g
+history 11
+history 11
