@@ -16,6 +16,7 @@ cat:
 
 date:
     date lol
+    date <invalid-flag>
 
 cd:
     cd
