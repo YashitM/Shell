@@ -1,0 +1,31 @@
+ls:
+    ls <invalid-flag>
+    ls <invalid-directory>
+
+mkdir:
+    mkdir <already-existing-directory>
+    mkdir
+
+rm:
+    rm
+    rm <directory-name>
+
+cat:
+    cat <non-existing-file>
+    cat 
+
+date:
+    date lol
+
+cd:
+    cd
+    cd <non-existing-directory>
+
+echo:
+    echo "hello
+    echo 
+
+history:
+    history <number-greater-than-entries-in-file>
+    history 0
+

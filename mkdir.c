@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <dirent.h>
+#include <libgen.h>
 
 char *checkFlag(char **argv, int argc)
 {
@@ -15,6 +17,20 @@ char *checkFlag(char **argv, int argc)
         }
     }
     return "0";
+}
+
+void mkdir_rec(char *path)
+{
+    for(int i=0; i<strlen(path); i++) {
+        if(path[i] == '/') {
+            char newString[i];
+            for(int j=0; j<i; j++) {
+                newString[j] = path[j];
+            }
+            mkdir(newString, 0777);
+        }
+    }
+    mkdir(path, 0777);
 }
 
 int main(int argc, char **argv)
@@ -76,40 +92,49 @@ int main(int argc, char **argv)
                 }
             }
         }
-        else if (strstr(flag, "-m"))
-        {   
-            int num;
-            char *ptr;
-            char *numString;
-            char permission[100];
-            for (int i = 3; i < argc; i++)
-            {
-                num = strtol(argv[i],&ptr,10);
-                numString = argv[i];
-                if (!strstr(argv[i], "-") && !(*ptr!='\0' || ptr==argv[i]))
-                {
-                    printf("Hello");
-                    break;
-                }
-            }
-            for (int i = 3; i < argc; i++)
-            {
-                if (!strstr(argv[i], "-") && !strstr(argv[i],numString))
-                {
-                    if (mkdir(argv[i],num) != 0)
-                    {
-                        printf("mkdir: cannot create directory '%s'\n", argv[i]);
-                    }
-                    else
-                    {
-                        printf("mkdir: created directory '%s'\n", argv[i]);
-                    }
-                    break;
+        else if (strstr(flag, "-p"))
+        {
+            for(int i=3; i<argc; i++) {
+                if(!strstr(argv[i],"-p")) {
+                    mkdir_rec(argv[i]);
                 }
             }
         }
+        // else if (strstr(flag, "-m"))
+        // {   
+        //     int num;
+        //     char *ptr;
+        //     char *numString;
+        //     char permission[100];
+        //     for (int i = 3; i < argc; i++)
+        //     {
+        //         num = strtol(argv[i],&ptr,10);
+        //         numString = argv[i];
+        //         if (!strstr(argv[i], "-") && !(*ptr!='\0' || ptr==argv[i]))
+        //         {
+        //             printf("Hello");
+        //             break;
+        //         }
+        //     }
+        //     for (int i = 3; i < argc; i++)
+        //     {
+        //         if (!strstr(argv[i], "-") && !strstr(argv[i],numString))
+        //         {
+        //             if (mkdir(argv[i],num) != 0)
+        //             {
+        //                 printf("mkdir: cannot create directory '%s'\n", argv[i]);
+        //             }
+        //             else
+        //             {
+        //                 printf("mkdir: created directory '%s'\n", argv[i]);
+        //             }
+        //             break;
+        //         }
+        //     }
+        // }
         else {
             printf("mkdir: invalid option %s\n", flag);
         }
     }
+    
 }

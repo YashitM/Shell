@@ -208,3 +208,159 @@ ls
 ls
 make
 exit
+mkdir -p hello/there/how
+mkdir -p hello/how
+ls
+mkdir -p hello/how/are/you
+make
+./shell
+mkdir -p hello/how
+mkdir -p hello/how/
+mkdir -p helo/how/
+mkdir -p hleloo/how
+;s
+ls
+cd hleloo
+ls
+c d..
+cd ..
+exit
+mkdir -p hello/how/are
+ls
+rm -rf hleloo
+mkdir -p hello/how/are/you
+ls
+cd hello/
+ls
+cd ..
+rm -d hello
+ls
+exit
+mkdir -p hello/how
+ls
+cd ..
+exit
+mkdir -p how/are
+ls
+cd ho	
+make
+./shell
+mkdir -p no/dont
+ls
+cd no
+ls
+cd ..
+mkdir hello/
+ls
+rm hello
+rm -d hello
+ls
+exit
+mkdir -p how/are/you
+ls
+make
+./shell
+./shell
+mkdir -p how/are/you
+ls
+mkdir -p hpoe/ksjdf/
+mkdir -p hello/how/are
+make
+./shell
+mkdir -p hely/how
+mkdir -p heo/hi
+exit
+mkdir -p helo/how
+ls
+cd helo
+ls
+mkdir -p hel/he
+mkdir -p hi/this/is
+mkdir -p hello/there
+mkdir -p hell/hi/how
+mkdir -p hello/how/are/you/my dear/friend
+make
+mkdir -p hello/there/how/are
+mkdir -p hello/how/are/you/my
+mkdir -p hello/how/are/you/my
+mkdir -p hello/how/are/you/my/
+mkdir -p hello/there how/are
+make
+mkdir -p hi/there/
+./shell
+mkdir -p how/are you/my/friend
+mkdir -p hello/there/how/are
+mkdir -p hello/there/how/are/you/there/hmm
+mkdir -p hello/there/yashit/how
+mkdir -p hello/there/yashit.how
+mkdir -p hello/there/yashiut
+echo
+ls
+echo "hello
+ls -p
+ls 
+ls -aaaaa
+ls -m
+ls lol
+mkdir binaries
+mkdir
+rm lol
+ls
+cat lol
+cat
+date lol
+date -f
+date 2
+
+cd lol
+ls hahahah
+ls haha/
+ls hello
+ls binaries
+ls binaries
+
+cd binaries
+ls
+cd ..
+ls lol
+ls lol
+
+ls binaries
+cd .
+cd ..
+ls Shell/binaries
+ls
+ls
+ls
+ls
+ls
+cd Shell
+ls
+cd ..
+ls
+cd ..
+l
+dls
+cd ..
+ls
+cd Sem4
+cd OS
+cd Shell
+ls
+cat
+cat
+cat
+cat
+cat
+make
+./shell
+cat
+cat
+cat
+
+cat
+ls
+hello
+cat
+cat
+cat

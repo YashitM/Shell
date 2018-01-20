@@ -32,7 +32,7 @@ Execute Internal and External Commands *with some flags*. A detailed description
     * ```mkdir``` : Make Directories.
         * Flags:
             * ```-v``` : Print a message for each created directory.
-            * ```-m``` : Set file mode (as in chmod).
+            * ```-p``` : Make parent directories.
         * Implementation:
             * Using the ```mkdir()``` function in C.
         * Additional Features:
@@ -60,6 +60,7 @@ Execute Internal and External Commands *with some flags*. A detailed description
             * By simply parsing the input and reading the files using ```fopen()``` and ```fgetc()``` functions in C.
         * Additional Features:
             * ```cat <multiple files separated using space>``` will read out the contents of all the files mentioned.
+            * Just typing ```cat``` command will open an echo shell. Whatever input is given will be printed out to the user.
         * Usage:
             * ```cat hello.txt```
             * ```cat -nE hello.txt``` 
@@ -130,3 +131,5 @@ Extensive error handling is done for each command.
 * The main binary ```shell```, is to be kept in the same directory as the ```C``` files. The other binaries, are stored in the ```binaries``` folder. It is thus suggested to use the provied ```Makefile```, as it takes care of this. 
 * Multiple flags in a single command will not execute.
 * Commands like ```cd, rm, mkdir``` will not work if there are Spaces in the File/Directory Name.
+* In ```mkdir```, backspace will alter the creation of the directories.
+* If the input is just ```cat```, in windows bash, it will quit the shell process as a whole even after implementing a signal handler.

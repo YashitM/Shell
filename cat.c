@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<string.h>
+#include <signal.h>
 
 char *checkFlag(char **argv, int argc) {
     for(int i=0; i<argc; i++) {
@@ -10,10 +11,22 @@ char *checkFlag(char **argv, int argc) {
     return "0";
 }
 
+static volatile int keepRunning = 1;
+
+void sigintHandler(int dummy)
+{
+    keepRunning = 0;
+}
+
 int main(int argc, char **argv) {
     if (argc < 4)
     {
-        printf("cat: No such file or directory\n");
+        signal(SIGINT, sigintHandler);
+        char input_string[1000];
+        while (keepRunning) { 
+            fgets(input_string, 100, stdin);
+            printf("%s", input_string);
+        }
     }
     else
     {

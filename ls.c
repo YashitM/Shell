@@ -42,7 +42,7 @@ int main(int argc, char **argv)
             count += 1;
         }
     }
-    if(strstr(checkFlag(argv,argc),"0")) {
+    if(strstr(checkFlag(argv,argc),"0") && argc == 3) {
         DIR *dir;
         struct dirent *ent;
         if ((dir = opendir(".")) != NULL)
@@ -75,6 +75,47 @@ int main(int argc, char **argv)
             }
             printf("\n");
             closedir(dir);
+        }
+    }
+    else if(strstr(checkFlag(argv,argc),"0") && argc > 3) {
+        DIR *dir;
+        struct dirent *ent;
+        if ((dir = opendir(argv[3])) != NULL)
+        {
+            while ((ent = readdir(dir)) != NULL)
+            {
+                char *name = ent->d_name;
+
+                if ((name[0] == '.' && strlen(name) == 1) || (name[0] == '.' && name[1] == '.' && strlen(name) == 2))
+                {
+                    printf("\033[0;34m");
+                    printf("%s ", name);
+                    printf("\033[0m");
+                    continue;
+                }
+                else if (name[0] == '.')
+                {
+                    continue;
+                }
+
+                if (is_regular_file(name))
+                {
+                    printf("\033[0;32m");
+                    printf("%s ", name);
+                    printf("\033[0m");
+                }
+                else
+                {
+                    printf("\033[0;34m");
+                    printf("%s ", name);
+                    printf("\033[0m");
+                }
+            }
+            printf("\n");
+            closedir(dir);
+        }
+        else {
+            printf("ls: cannot access '%s': No such file or directory\n", argv[3]);
         }
     }
     else {
