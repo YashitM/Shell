@@ -364,3 +364,13 @@ hello
 cat
 cat
 cat
+sudo
+sudo su
+mak
+make
+./shell
+ls
+exit
+exit
+ls
+ls -a

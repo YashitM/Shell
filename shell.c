@@ -338,8 +338,15 @@ int	main() {
 	char history_file_location[1000];
 	strcpy(history_file_location,const_dir);
 	strcat(history_file_location,"/history_file.txt");
+	char host[1000] = "";
+	char *user;
+	gethostname(host, sizeof(host));
+	user = getenv("LOGNAME");
 	while (1) {
 		getcwd(cwd, sizeof(cwd));
+		printf("\033[0;34m");
+		printf("%s@%s:", user, host);
+		printf("\033[0m");
 		printf("\033[0;32m");
 		printf("%s$ ",cwd);
 		printf("\033[0m"); 
