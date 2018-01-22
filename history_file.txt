@@ -446,3 +446,19 @@ pwd -lol
 exit
 pwd -lol
 exit
+ls
+
+exit
+date
+exit
+ls
+ls -a
+pwd
+pwd lol
+pwd -l
+exit
+ls -a
+ls -m
+ls
+make shell
+make ls

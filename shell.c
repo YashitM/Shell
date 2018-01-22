@@ -501,7 +501,7 @@ int	main() {
 				pid = fork();
 				char tempDirectory[1000];
 				strcpy(tempDirectory, const_dir);
-				strcat(tempDirectory, "/binaries/cat");
+				strcat(tempDirectory, "/cat");
 				if(pid == 0) {
 					char *argv[] = {tempDirectory, (char *)elements};
 					if(execvp(argv[0],argv)<0) {
@@ -523,7 +523,7 @@ int	main() {
 				pid = fork();
 				char tempDirectory[1000];
 				strcpy(tempDirectory, const_dir);
-				strcat(tempDirectory, "/binaries/ls");
+				strcat(tempDirectory, "/ls");
 				if (pid == 0)
 				{
 					char *argv[] = {tempDirectory, (char *)elements};
@@ -544,7 +544,7 @@ int	main() {
 				pid = fork();
 				char tempDirectory[1000];
 				strcpy(tempDirectory, const_dir);
-				strcat(tempDirectory, "/binaries/date");
+				strcat(tempDirectory, "/date");
 				if (pid == 0)
 				{
 					char *argv[] = {tempDirectory, (char *)elements};
@@ -565,7 +565,7 @@ int	main() {
 				pid = fork();
 				char tempDirectory[1000];
 				strcpy(tempDirectory, const_dir);
-				strcat(tempDirectory, "/binaries/rm");
+				strcat(tempDirectory, "/rm");
 				if (pid == 0)
 				{
 					char *argv[] = {tempDirectory, (char *)elements};
@@ -586,7 +586,7 @@ int	main() {
 				pid = fork();
 				char tempDirectory[1000];
 				strcpy(tempDirectory, const_dir);
-				strcat(tempDirectory, "/binaries/mkdir");
+				strcat(tempDirectory, "/mkdir");
 				if (pid == 0)
 				{
 					char *argv[] = {tempDirectory, (char *)elements};

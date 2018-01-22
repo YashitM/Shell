@@ -15,7 +15,8 @@ char *checkFlag(char **argv, int argc)
 }
 
 int main(int argc, char **argv)
-{
+{   
+    printf("%d\n", argc);
     char str[100000];
     time_t t = time(NULL);
     if (strstr(checkFlag(argv, argc), "0") && argc == 3)
