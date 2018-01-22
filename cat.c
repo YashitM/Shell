@@ -21,7 +21,7 @@ void sigintHandler(int dummy)
 int main(int argc, char **argv) {
     if (argc < 4)
     {
-        signal(SIGINT, sigintHandler);
+        // signal(SIGINT, sigintHandler);
         char input_string[1000];
         while (keepRunning) { 
             fgets(input_string, 100, stdin);

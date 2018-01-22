@@ -30,3 +30,6 @@ history:
     history <number-greater-than-entries-in-file>
     history 0
 
+pwd:
+    pwd <invalid-flag>
+    pwd lol

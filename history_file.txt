@@ -374,3 +374,75 @@ exit
 exit
 ls
 ls -a
+history
+history 10
+history 0
+exit
+
+
+cat
+cat
+
+
+exit
+
+
+
+
+
+
+
+
+
+make
+
+exit
+
+
+exit
+
+
+
+
+
+make
+cat
+
+
+exit
+
+cat
+exit
+cat
+
+exit
+ls
+cat
+
+
+
+
+
+
+
+
+
+
+
+
+exit
+ls
+cd lol
+cd cat.c
+
+pwd lol
+pwd -;
+exit
+pwd -l
+exit
+pwd lol
+pwd -l
+pwd -lol
+exit
+pwd -lol
+exit

@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <sys/wait.h>
 #include <fcntl.h>
+#include <signal.h>
 
 int checkExists(char **argv, int argc)
 {
@@ -327,6 +328,11 @@ int getNumberOfLines(char *history_file_location)
 	return numberOfLines;
 }
 
+void sigintHandler(int dummy)
+{
+
+}
+
 int	main() {
 	int pid;
 	char input_string[1000];
@@ -343,6 +349,7 @@ int	main() {
 	gethostname(host, sizeof(host));
 	user = getenv("LOGNAME");
 	while (1) {
+		signal(SIGINT, sigintHandler);
 		getcwd(cwd, sizeof(cwd));
 		printf("\033[0;34m");
 		printf("%s@%s:", user, host);
@@ -402,7 +409,17 @@ int	main() {
 				}
 			}
 			else if (strstr(first, "pwd")){
-				printf("%s\n",cwd);
+				if(len_array > 1) {
+					if(checkExists(elements, len_array)==0) {
+						printf("%s\n", cwd);
+					}
+					else {
+						printf("bash: pwd: %s: invalid option\n", elements[1]);
+					}
+				}
+				else {
+					printf("%s\n",cwd);
+				}
 			}
 			else if (strstr(first, "history")) {
 				if(len_array == 1) {

@@ -61,6 +61,7 @@ Execute Internal and External Commands *with some flags*. A detailed description
         * Additional Features:
             * ```cat <multiple files separated using space>``` will read out the contents of all the files mentioned.
             * Just typing ```cat``` command will open an echo shell. Whatever input is given will be printed out to the user.
+            * When user types ```cat```, and hits ```ctrl+c```, using a signal handler, the program execution will not stop, but will be returned to the parent process.
         * Usage:
             * ```cat hello.txt```
             * ```cat -nE hello.txt``` 
@@ -133,3 +134,4 @@ Extensive error handling is done for each command.
 * Commands like ```cd, rm, mkdir``` will not work if there are Spaces in the File/Directory Name.
 * In ```mkdir```, backspace will alter the creation of the directories.
 * If the input is just ```cat```, in windows bash, it will quit the shell process as a whole even after implementing a signal handler.
+* ```ctrl+c``` will not exit the shell, but a return is required to contine the execution of the program.
